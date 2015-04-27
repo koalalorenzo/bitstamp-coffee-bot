@@ -29,5 +29,5 @@ node_modules
 # Repository specific
 *.js
 config.json
-dist
+build
 persist
