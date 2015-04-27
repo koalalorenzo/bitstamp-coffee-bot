@@ -13,7 +13,7 @@ module.exports = (grunt) ->
 
     grunt.registerTask 'clean', 'Clean everything', ->
       grunt.file.delete "./build/"
-      grunt.log.ok "Build file removed"
+      grunt.log.ok "Building files removed"
 
     grunt.registerTask 'copy', 'Moving the configuration', ->
       grunt.file.copy "./config.json", "./build/config.json"
