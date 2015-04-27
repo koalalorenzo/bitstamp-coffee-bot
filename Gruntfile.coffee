@@ -15,7 +15,6 @@ module.exports = (grunt) ->
       grunt.file.copy "./config.json", "./dist/config.json"
 
     grunt.registerTask 'trade', 'Moving the configuration', ->
-      @requires ["coffee", "copy"]
       done = @async()
       trade = require "./dist/main.js"
       trade ->
@@ -30,4 +29,5 @@ module.exports = (grunt) ->
         trade
       , 1000 * 30
 
+  grunt.registerTask 'build', ['coffee', 'copy']
   grunt.registerTask 'default', ['coffee', 'copy', 'trade']
