@@ -25,9 +25,9 @@ trade = (callback) ->
 
     account.load ->
       if account.balance.btc <= 0 and account.balance.usd <= 0
-        console.log "No money to trade! :("
+        console.log "No money on the account! :("
       else if(account.orders.length > 0)
-        console.log "Open Orders is there..."
+        console.log "There are some Open Orders... waiting"
       else
         for element in account.transactions
           element.btc = parseFloat element.btc
