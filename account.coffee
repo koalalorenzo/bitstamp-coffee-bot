@@ -51,8 +51,7 @@ class Account
   update_transactions : (callback) ->
     privateBitstamp.user_transactions 5, (a, b) =>
       trading_transactions = []
-      for element in b when element.type is not 2
-
+      for element in b when element.type is 2
         if parseFloat(element.usd) < 0
           element.type = "buy"
         if parseFloat(element.btc) < 0
