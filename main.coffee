@@ -1,0 +1,3 @@
+trade = require "./trade"
+
+trade()
