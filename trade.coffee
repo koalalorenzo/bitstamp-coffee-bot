@@ -25,7 +25,9 @@ trade = (callback) ->
 
     account.load ->
       sleep 1 # Sleeping yay
-      if account.transactions.length <= 0
+      if account.transactions == undefined
+        console.log "No transactions history! Try again later"
+      else if account.transactions.length <= 0
         console.log "No transactions history! Check the permissions"
       else if account.balance.btc <= 0 and account.balance.usd <= 0
         console.log "No money on the account! :("
