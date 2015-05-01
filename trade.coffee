@@ -2,7 +2,7 @@ moment = require 'moment'
 storage = require 'node-persist'
 fs = require "fs"
 Bitstamp = require 'bitstamp'
-
+sleep = require('sleep').sleep
 Account = require './account.js'
 config = require './config.json'
 
@@ -24,7 +24,10 @@ trade = (callback) ->
     console.log "Current price: #{avarage}"
 
     account.load ->
-      if account.balance.btc <= 0 and account.balance.usd <= 0
+      sleep 1 # Sleeping yay
+      if account.transactions.length <= 0
+        console.log "No transactions history! Check the permissions"
+      else if account.balance.btc <= 0 and account.balance.usd <= 0
         console.log "No money on the account! :("
       else if(account.orders.length > 0)
         console.log "There are some Open Orders... waiting"
