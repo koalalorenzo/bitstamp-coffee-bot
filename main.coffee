@@ -46,14 +46,20 @@ trade = (callback) ->
 
         if most_recent_order.type is "buy"
           # You bought now SELL
-          # selling_price = most_recent_order.btc_usd + config.gap
-          selling_price = price.usd_per_btc + config.gap
+
+          selling_price = most_recent_order.btc_usd + config.gap
+          current_selling_price = price.usd_per_btc + config.gap
+          if selling_price < current_selling_price
+            selling_price = current_selling_price
 
           account.sell account.balance.btc, selling_price
+
         else
           # You sold now BUY!
-          # buying_price = most_recent_order.btc_usd - config.gap
-          buying_price = price.usd_per_btc - config.gap
+          buying_price = most_recent_order.btc_usd - config.gap
+          current_buying_price = price.usd_per_btc - config.gap
+          if buying_price > current_buying_price
+            buying_price = current_buying_price
 
           amount_of_btc_to_buy = account.balance.usd / buying_price
           __big_amount = parseInt amount_of_btc_to_buy*10000
