@@ -7,6 +7,7 @@ module.exports = (grunt) ->
           bare: yes
         files:
           'build/account.js': 'account.coffee',
+          'build/trade.js': 'trade.coffee'
           'build/main.js': 'main.coffee'
 
     grunt.loadNpmTasks 'grunt-contrib-coffee'
@@ -21,13 +22,13 @@ module.exports = (grunt) ->
 
     grunt.registerTask 'trade', 'Make buy or sell orders', ->
       done = @async()
-      trade = require "./build/main.js"
+      trade = require "./build/trade.js"
       trade ->
         done(0)
 
     grunt.registerTask 'tradeLoop', 'infiniteloop of trade task', ->
       done = @async()
-      trade = require "./build/main.js"
+      trade = require "./build/trade.js"
 
       grunt.log.ok "Trade loop started"
       setInterval ->
