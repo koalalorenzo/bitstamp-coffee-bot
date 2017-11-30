@@ -18,7 +18,7 @@ If you want it to check bitstamp every 15 seconds, like a "real bot", you can al
 I am not into trading, so this is just a basic bot that will check the transactions and perform buy/sell to try to earn something. I am a developer, not an economist-trader-broker-whatever... but feel free to improve the project to make it working!
 
 I've created this project **for fun** and to experiment using NodeJS, CoffeeScript and Grunt and bitstamp APIs.
-For your security, you can inspect the code: there is no strange withdrawal... but if you want to **donate** to keep me working on projects like this one, here is my Bitcoin address: *1GsAxo7aiuBkTAoUgb4ePWhUrBm9YW9cTq*
+For your security, you can inspect the code: there is no strange withdrawal... but if you want to **donate** to keep me working on projects like this one, find my bitcoin address here https://setale.me/contact.html
 
 ## Configuring
 To configure correctly the program you need to create your own *config.json* file and put it inside the repository.
